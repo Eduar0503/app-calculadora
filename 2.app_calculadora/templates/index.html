@@ -1,0 +1,41 @@
+<!--index.html-->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo de Calculadora" width="64" height="64"> Calculadora Aritmetica
+        </h1>
+    <p>Ingrese datos Numericos..</p>
+    <form action="/" method="POST">
+
+        <div class="row">
+            <div class="col-md-6">
+                <input type="number" class="form-control" name="n1" placeholder="Ingrese el Primer Numero" aria-label="Ingrese el Primer Numero">
+
+            </div>
+            <div class="col-md-6">
+                <input type="number" class="form-control" name="n2" placeholder="Ingrese el Segundo Numero" aria-label="Ingrese el Segundo Numero">
+
+            </div>
+
+        </div>
+        <div class="row py-3">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Calcular</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <div class="row py-2">
+        <div class="col">
+            <h3>la suma es: {{total_suma}}</h3>
+            <h3>la Resta es: {{total_resta}}</h3>
+            <h3>la Multiplicaion es: {{total_multipicacion}}</h3>
+            <h3>la Division es: {{total_division}}</h3>
+        </div>
+
+    </div>
+{% endblock %}
